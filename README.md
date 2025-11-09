@@ -95,3 +95,91 @@ for i := range 3{
 }
 
 ```
+
+## If Else
+```go 
+package main
+func main(){
+    // If else 
+    age := 18
+
+    if age >= 18{
+        fmt.Println("Person is an Adult")
+    } else{
+        fmt.Println("Person is not an Adult")
+    }
+
+    // If else elif
+    age := 16
+    if age >= 18 {
+        fmt.Println("Person is a Adult")
+    } else if age >= 12 {
+        fmt.Println("Person is a teenager")
+    } else {
+        fmt.Println("Person is a child")
+    }
+
+    // Examples
+    var role = "admin"
+    var hasPermissiono = true
+
+    if role == "admin" || hasPermissions{
+        fmt.Println("Yes")
+    }
+
+    // Directly declear varialbe in if condition
+    if age :=15; age >= 18{
+        fmt.Println("Person is an Adult", age)
+    } else if age >=12 {
+        fmt.Println ("Person is teenager", age)
+    }
+}
+```
+`Note: GO does not have ternary operator, we have to use noraml if else in that case`
+
+
+## Switch statement
+
+```go 
+package main 
+
+import "time"
+func main(){
+    // simple switch 
+    i := 5
+    switch i {
+        case 1: 
+            fmt.Println("One")
+        case 2:
+            fmt.Println("Three")
+        case 3:
+            fmt.Println("Three")
+        default::
+            fmt.Println("Other")
+    }
+
+    // Multiple condition switch
+    switch time.Now().Weekday(){
+        case time.Saturday, time.Sunday:
+            fmt.Println("It's weekend")
+        default:
+            fmt.Println("It's working day")
+    }
+
+    // Type switch
+    whoAmI := func(i interface{}){
+        switch t := i.(type) {
+            case int:
+                fmt.Println("Its an Integer")
+            case string:
+                fmt.Println("Its a string")
+            case bool:
+                fmt.Println("Its a boolean")
+            default:
+                fmt.Println("other", t)
+        }
+    }
+whoAmI(12) // Retruns its an integer
+}
+
+```
