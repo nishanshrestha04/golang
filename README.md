@@ -3,8 +3,9 @@
 ## Installation for linux:
 
 Visit: [GO Downlaod](https://go.dev/dl/)
+
 - Download the `tar.gz` go version
-  
+
 Go to the flolder where you have installed it and open the folder in termianl.
 
 In my case. Its in my `/home/user/Download` folder and run the following command to extract and install the GO.
@@ -33,9 +34,10 @@ func main() {
 go run main.go
 
 ```
-****
-Now you are ready to use GO Lang 
 
+---
+
+Now you are ready to use GO Lang
 
 ## Data Types in GO
 
@@ -45,6 +47,7 @@ Now you are ready to use GO Lang
 - float `0.5`
 
 ## Variables
+
 ```go
 var name string = "golang" // we have to use the variable is it being declared.
 
@@ -57,11 +60,12 @@ name := "golang"
 ```
 
 ## Constants
+
 ```go
 // we use const keyword to define a constant value
 const name = "golang" // we cannot change the value
 
-// we can group the constant value in go 
+// we can group the constant value in go
 const (
     port = 5000
     host = "localhost"
@@ -69,8 +73,10 @@ const (
 ```
 
 ## Loops
--> For Loop 
+
+-> For Loop
 For is only options for looping in GO lang
+
 ```go
 // while loop format using for
 i := 1
@@ -97,10 +103,11 @@ for i := range 3{
 ```
 
 ## If Else
-```go 
+
+```go
 package main
 func main(){
-    // If else 
+    // If else
     age := 18
 
     if age >= 18{
@@ -135,20 +142,20 @@ func main(){
     }
 }
 ```
-`Note: GO does not have ternary operator, we have to use noraml if else in that case`
 
+`Note: GO does not have ternary operator, we have to use noraml if else in that case`
 
 ## Switch statement
 
-```go 
-package main 
+```go
+package main
 
 import "time"
 func main(){
-    // simple switch 
+    // simple switch
     i := 5
     switch i {
-        case 1: 
+        case 1:
             fmt.Println("One")
         case 2:
             fmt.Println("Three")
@@ -185,7 +192,9 @@ whoAmI(12) // Retruns its an integer
 ```
 
 ## Arrays
+
 `The numbered sequence of specific lenght is called Arrays`
+
 ```go
 pakcage main
 
@@ -217,14 +226,14 @@ func main(){
 ## Slices - Dynamic Arrays
 
 ```go
-package main 
+package main
 
 
 // most used construct in GO
-
+import "slices"
 func mian(){
     // uninitilized slice is nil
-    var nums []int // declear a slice 
+    var nums []int // declear a slice
     fmt.Println(len(nums)) // 0
     fmt.Println(nums == nil) // ture
 
@@ -239,13 +248,84 @@ func mian(){
     var nums2 = nake([]int, len(nums))
 
     // nums = append(nums, 2)
-    copy(nums2, nums) // destination, source 
+    copy(nums2, nums) // destination, source
     fmt.Println(nums, nums2) // [2] []
 
 
     // slice operator
+    var nums = []int{1, 2, 3}
+    fmt.Println(nums[0:2]) // return number before 2nd index in this case [1 2]
 
-    
-}   
+    // slice package
+    var nums1 = []int{1, 2}
+    var nums2 = []int{1, 2}
+
+    fmt.Println(slices.Equal(nums1, nums2))
+}
 ```
-`Note: Slice is a dynamic array which increase it capacity as the contet increase in the array`  
+
+`Note: Slice is a dynamic array which increase it capacity as the contet increase in the array`
+
+## Maps
+
+```go
+package main
+
+// maps -> hash, object, dict
+
+func mian(){
+    // creating a map
+
+    m := make(map[string]string)
+
+    // setting an element
+    m["name"] = "Nishan"
+
+    // getting an element
+    fmt.Println(m["name"])
+
+    // when we access a key doesnot exit in the map it returns the 0 value
+
+    // delete element in map
+    delete(m, "name") // first argument map, second argument key which we need to delete
+
+    // delete all
+    clear(m)
+
+    // make map without make fucntion
+    m:= map[stirng]int{"price": 5 }
+    m2:= map[stirng]int{"price": 5 }
+
+    // check if the map are equal or not
+    fmt.Println(maps.Equal(m1, m2))
+}
+```
+
+## Range
+
+`Range is used to iterate over data structures`
+
+```go
+nums := []int{6,7,8}
+
+// using for loop
+for i := 0; i < len(nums); i++{
+    fmt.Println(nums[i])
+}
+
+// using range
+sum := 0
+for i, num := range nums{ // it gets the index of the elemet also
+    sum = sum + num
+    fmt.Println(num) // 6 7 8
+    fmt.Println(i)
+}
+fmt.Println(sum)
+
+
+m ::= map[stirng]string{"fname": "Nishan", "lname": "Shrestah"}
+for k, v := range m{
+    fmt.Println(k, v) // fname: Nishan lname Shrestha 
+}
+
+```
