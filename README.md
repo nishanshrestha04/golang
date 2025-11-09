@@ -183,3 +183,69 @@ whoAmI(12) // Retruns its an integer
 }
 
 ```
+
+## Arrays
+`The numbered sequence of specific lenght is called Arrays`
+```go
+pakcage main
+
+import "fmt"
+
+func main(){
+    // zeroed value
+    // int -> 0, string -> "", bool -> false
+
+
+    var nums [4]int // array decleration length of the array and type of the array
+
+    fmt.Println(len(nums)) // returns the length of an array
+
+    nums[0] = 1 // put vlaue in and array
+
+    fmt.Println(nums[0]) // returns the first index of the array which is 1
+
+    nums := [3]int {1, 2, 3} // insert value in he array
+
+
+    // 2D array in go
+    nums := [2][2]int{{3, 4},{5, 6}} // insert vlaue in 2d array
+}
+```
+
+`Note: We use array when we have tthe size of the array because has fixed size with memory optimization, constant time access`
+
+## Slices - Dynamic Arrays
+
+```go
+package main 
+
+
+// most used construct in GO
+
+func mian(){
+    // uninitilized slice is nil
+    var nums []int // declear a slice 
+    fmt.Println(len(nums)) // 0
+    fmt.Println(nums == nil) // ture
+
+    var nums = make([]int, 2, 5) // initilized slice
+    fmt.Println(len(nums)) // 2
+    fmt.Println(nums == nil) // false
+    // capacity -> Maximum numbers of an element can fit
+    nums = append(nums, 1) // add value in slice
+
+    // copy function
+    var nums = make([]int, 2, 5)
+    var nums2 = nake([]int, len(nums))
+
+    // nums = append(nums, 2)
+    copy(nums2, nums) // destination, source 
+    fmt.Println(nums, nums2) // [2] []
+
+
+    // slice operator
+
+    
+}   
+```
+`Note: Slice is a dynamic array which increase it capacity as the contet increase in the array`  
